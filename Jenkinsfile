@@ -23,13 +23,7 @@ pipeline {
 
     stage('Check unit:test') {
       steps {
-        sh 'npm run test:unit --coverage'
-      }
-      post {
-        always {
-          junit 'junit.xml'
-          cobertura coberturaReportFile: 'coverage/cobertura-coverage.xml'
-        }
+        sh 'npm run test:unit'
       }
     }
 
