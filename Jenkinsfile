@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  tools {nodejs "Node 22.11.0"}
   stages {
     stage('Check for vulnerabilities') {
       steps {
