@@ -9,7 +9,7 @@ pipeline {
       }
     }
 
-    stage('download dependencies') {
+    stage('Download dependencies') {
       steps {
         sh 'npm ci'
       }
@@ -21,7 +21,7 @@ pipeline {
       }
     }
 
-    stage('Check unit:test') {
+    stage('Check unit tests') {
       steps {
         sh 'npm run test:unit'
       }
