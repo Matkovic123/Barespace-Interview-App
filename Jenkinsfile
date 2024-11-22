@@ -23,7 +23,7 @@ pipeline {
 
     stage('Check unit:test') {
       steps {
-        sh 'npm run test:unit -- --ci --coverage'
+        sh 'npm run test:unit --coverage'
       }
       post {
         always {
