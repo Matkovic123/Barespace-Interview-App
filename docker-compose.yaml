@@ -1,6 +1,6 @@
 services:
   app:
-    build: .
+    image: matkovic123/barespace-vue-app
     container_name: vue-app
     ports:
     - 8080:80
