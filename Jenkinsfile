@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Check for vulnerabilities') {
       steps {
-        sh 'npm audit --parseable --production'
+        sh 'npm audit --parseable --omit=dev'
         sh 'npm outdated || exit 0'
       }
     }
