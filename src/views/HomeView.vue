@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import { useQuestiontStore } from '@/stores/QuestionStore'
+
+const store = useQuestiontStore()
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <h1>I'll be putting my stuff here</h1>
+    <pre>{{ store.list[0] }}</pre>
   </main>
 </template>
