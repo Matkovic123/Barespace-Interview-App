@@ -2,14 +2,19 @@
 def remote = [:]
 remote.name = 'Barespace-vue-app-droplet'
 remote.host = '68.183.33.222'
+remote.user = 'root'
 remote.allowAnyHosts = true
 node {
-    stage('Remote SSH') {
-        sshCommand remote: remote, command: 'touch JENKINS-CREATED'
-    // sshCommand remote: remote, command: 'wget -O docker-compose.yaml  https://raw.githubusercontent.com/Matkovic123/Barespace-Interview-App/refs/heads/main/docker-compose.yaml'
-    // sshCommand remote: remote, command: 'docker-compose stop'
-    // sshCommand remote: remote, command: 'docker-compose rm -f'
-    // sshCommand remote: remote, command: 'docker-compose pull   '
-    // sshCommand remote: remote, command: 'docker compose up'
+    withCredentials([sshUserPrivateKey(credentialsId: 'ssh-credentials	', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'root')]) {
+        remote.user = userName
+        remote.identityFile = identity
+        stage('Remote SSH') {
+            sshCommand remote: remote, command: 'touch JENKINS-CREATED'
+        // sshCommand remote: remote, command: 'wget -O docker-compose.yaml  https://raw.githubusercontent.com/Matkovic123/Barespace-Interview-App/refs/heads/main/docker-compose.yaml'
+        // sshCommand remote: remote, command: 'docker-compose stop'
+        // sshCommand remote: remote, command: 'docker-compose rm app -f'
+        // sshCommand remote: remote, command: 'docker-compose pull   '
+        // sshCommand remote: remote, command: 'docker compose up'
+        }
     }
 }
