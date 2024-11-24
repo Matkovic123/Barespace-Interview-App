@@ -6,8 +6,12 @@ pipeline {
             steps {
                 echo 'Deploying..'
                 sshagent(['ssh-deploy']) {
-                    sh "ssh -o StrictHostKeyChecking=no -l root 68.183.33.222 'touch JENKINS-CREATED'"
-                    sh "touch ANOTHER-FILE"
+                    sh "ssh -o StrictHostKeyChecking=no -l root 68.183.33.222
+                    '''
+                    touch JENKINS-CREATED
+                    touch ANOTHER-FILE
+                    '''
+                    "
                 }
             }
         }
