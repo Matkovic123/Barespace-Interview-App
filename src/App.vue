@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import InterviewNavigation from './components/InterviewNavigation.vue'
+import { RouterView } from 'vue-router';
+import InterviewNavigation from './components/InterviewNavigation.vue';
 </script>
 
 <template>

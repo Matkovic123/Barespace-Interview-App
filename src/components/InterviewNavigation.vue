@@ -1,5 +1,8 @@
 <script lang="ts" setup>
+import { useQuestiontStore } from '@/stores/QuestionStore'
 import { RouterLink } from 'vue-router'
+const store = useQuestiontStore()
+const questions = store.list
 </script>
 
 <template>
@@ -7,14 +10,8 @@ import { RouterLink } from 'vue-router'
     <template #start>
       <b-navbar-item>
         <div class="buttons">
-          <a class="button">
-            <RouterLink to="/">Question 1</RouterLink>
-          </a>
-          <a class="button">
-            <RouterLink to="/">Question 2</RouterLink>
-          </a>
-          <a class="button">
-            <RouterLink to="/">Question 3</RouterLink>
+          <a v-for="(question, index) in questions" :key="question.id" class="button">
+            <RouterLink :to="`/question/${index}`">Question {{ index + 1 }}</RouterLink>
           </a>
         </div>
       </b-navbar-item>

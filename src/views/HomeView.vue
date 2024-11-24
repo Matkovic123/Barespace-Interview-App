@@ -1,12 +1,7 @@
-<script setup lang="ts">
-import { useQuestiontStore } from '@/stores/QuestionStore'
-
-const store = useQuestiontStore()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <main>
-    <h1>I'll be putting my stuff here</h1>
-    <pre>{{ store.list[0] }}</pre>
+    <h1>Home view</h1>
   </main>
 </template>

@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { useQuestiontStore } from '@/stores/QuestionStore'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
 const questionStore = useQuestiontStore()
-const question1 = questionStore.list[0]
+const route = useRoute()
+const questionIndex = computed(() => route.params.index)
 </script>
 
 <template>
   <div>
-    Question component nr
-    <pre>{{ question1 }}</pre>
+    <pre>{{ questionStore.list[questionIndex] }}</pre>
   </div>
 </template>
 
