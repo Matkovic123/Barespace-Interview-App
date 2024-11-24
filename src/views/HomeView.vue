@@ -2,6 +2,6 @@
 
 <template>
   <main>
-    <h1>Home view</h1>
+    <h1>Home view by Toni</h1>
   </main>
 </template>
