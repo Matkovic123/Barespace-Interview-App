@@ -7,6 +7,8 @@ const questionStore = useQuestiontStore()
 const route = useRoute()
 const questionIndex = computed(() => route.params.index)
 const question = computed((): Question => questionStore.list[questionIndex.value])
+
+const solve = () => questionStore.solve(questionIndex.value)
 </script>
 
 <template>
@@ -22,7 +24,7 @@ const question = computed((): Question => questionStore.list[questionIndex.value
         <h1 class="title is-3">Solution</h1>
         <p v-if="question.solution">{{ question.solution }}</p>
         <p v-else>
-          <b-button type="is-success">Solve</b-button>
+          <b-button @click="solve()" type="is-success">Solve</b-button>
         </p>
       </div>
     </div>

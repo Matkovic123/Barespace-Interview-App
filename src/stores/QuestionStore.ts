@@ -1,3 +1,4 @@
+import { solveCreditCardNumber, solveMoveZerosToEnd, solveTwoSumTwo } from '@/static/solver'
 import { defineStore } from 'pinia'
 
 export type Question = {
@@ -44,5 +45,21 @@ export const useQuestiontStore = defineStore('QuestionStore', {
   // Computed
   getters: {},
   //Methods
-  actions: {},
+  actions: {
+    solve(index: string) {
+      switch (index) {
+        case '0':
+          this.list[index].solution = solveTwoSumTwo()
+          break
+        case '1':
+          this.list[index].solution = solveCreditCardNumber()
+          break
+        case '2':
+          this.list[index].solution = solveMoveZerosToEnd()
+          break
+        default:
+          console.log('Switch statement fell through')
+      }
+    },
+  },
 })
