@@ -12,7 +12,7 @@ type StateShape = {
   list: Question[]
 }
 
-export const useQuestiontStore: Store = defineStore('QuestionStore', {
+export const useQuestiontStore = defineStore('QuestionStore', {
   // Data
   state: (): StateShape => ({
     list: [
