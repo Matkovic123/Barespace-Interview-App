@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-type Question = {
+export type Question = {
   id: string
   title: string
   instructions: string

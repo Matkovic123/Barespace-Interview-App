@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useQuestiontStore } from '@/stores/QuestionStore'
+import { useQuestiontStore, type Question } from '@/stores/QuestionStore'
 import { RouterLink } from 'vue-router'
 const store = useQuestiontStore()
-const questions = store.list
+const questions: Question[] = store.list
 </script>
 
 <template>
@@ -11,7 +11,7 @@ const questions = store.list
       <b-navbar-item>
         <div class="buttons">
           <a v-for="(question, index) in questions" :key="question.id" class="button">
-            <RouterLink :to="`/question/${+index}`">Question {{ index + 1 }}</RouterLink>
+            <RouterLink :to="`/question/${index}`">Question {{ index + 1 }}</RouterLink>
           </a>
         </div>
       </b-navbar-item>
