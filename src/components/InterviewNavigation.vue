@@ -6,17 +6,20 @@ const questions: Question[] = store.list
 </script>
 
 <template>
-  <b-navbar>
-    <template #start>
-      <b-navbar-item>
-        <div class="buttons">
-          <a v-for="(question, index) in questions" :key="question.id" class="button">
-            <RouterLink :to="`/question/${index}`">Question {{ index + 1 }}</RouterLink>
-          </a>
-        </div>
-      </b-navbar-item>
-    </template>
-  </b-navbar>
+  <div class="container">
+    <b-navbar centered shadow>
+      <template #start>
+        <b-navbar-item v-for="(question, index) in questions" :key="question.id">
+          <div class="buttons">
+            <a class="button">
+              <RouterLink :to="`/question/${index}`">Question {{ index + 1 }}</RouterLink>
+            </a>
+          </div>
+        </b-navbar-item>
+      </template>
+    </b-navbar>
+    <br />
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
