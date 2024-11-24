@@ -9,6 +9,8 @@ pipeline {
                 sshagent(['ssh-deploy']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no -l root 68.183.33.222
+                    "pwd"
+                    "touch ASDSA"
                     "docker compose stop"
                     "docker compose rm app -f"
                     "docker compose pull"
