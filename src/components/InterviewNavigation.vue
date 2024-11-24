@@ -11,7 +11,7 @@ const questions = store.list
       <b-navbar-item>
         <div class="buttons">
           <a v-for="(question, index) in questions" :key="question.id" class="button">
-            <RouterLink :to="`/question/${index}`">Question {{ index + 1 }}</RouterLink>
+            <RouterLink :to="`/question/${+index}`">Question {{ index + 1 }}</RouterLink>
           </a>
         </div>
       </b-navbar-item>

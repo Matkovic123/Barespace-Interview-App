@@ -1,4 +1,4 @@
-import { defineStore, type Store } from 'pinia'
+import { defineStore } from 'pinia'
 
 type Question = {
   id: string
