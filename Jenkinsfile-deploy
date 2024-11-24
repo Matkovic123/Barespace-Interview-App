@@ -1,3 +1,4 @@
+/* groovylint-disable LineLength */
 pipeline {
     agent any
 
@@ -6,7 +7,14 @@ pipeline {
             steps {
                 echo 'Deploying..'
                 sshagent(['ssh-deploy']) {
-                    sh '''ssh -o StrictHostKeyChecking=no -l root 68.183.33.222 "touch JENKINS-CREATED && touch POTATO"'''
+                    sh '''
+                    ssh -o StrictHostKeyChecking=no -l root 68.183.33.222
+                    "wget -O docker-compose.yaml  https://raw.githubusercontent.com/Matkovic123/Barespace-Interview-App/refs/heads/main/docker-compose.yaml"
+                    "docker compose stop"
+                    "docker compose rm app -f"
+                    "docker compose pull"
+                    "docker compose up"
+                    '''
                 }
             }
         }
