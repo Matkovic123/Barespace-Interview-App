@@ -9,5 +9,8 @@ export const solveTwoSumTwo = (input: number[]): string => {
   // return `Numbers in position ${i} and ${j} summed up give the desired target value. Total time ${totalTime}`
   return 'No matches'
 }
-export const solveCreditCardNumber = () => '222'
+export const solveCreditCardNumber = (input: number) => {
+  const text = String(input)
+  return '************' + text.substring(text.length - 4)
+}
 export const solveMoveZerosToEnd = (input: number[]) => '333'

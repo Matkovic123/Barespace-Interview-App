@@ -29,7 +29,7 @@ export const useQuestiontStore = defineStore('QuestionStore', {
         title: 'Hide a credit card number',
         instructions:
           'A credit card usually contains 16 digits with an (*) arsterisk and keeps its last four digits as is. Return the updated string with the first 12 characters replaced with asterisks (*).',
-        input: null,
+        input: [Math.floor(Math.random() * 10000000000000000)],
         solution: null,
       },
       {
@@ -52,7 +52,7 @@ export const useQuestiontStore = defineStore('QuestionStore', {
           this.list[index].solution = solveTwoSumTwo(this.list[index].input)
           break
         case '1':
-          this.list[index].solution = solveCreditCardNumber()
+          this.list[index].solution = solveCreditCardNumber(this.list[index].input)
           break
         case '2':
           this.list[index].solution = solveMoveZerosToEnd(this.list[index].input)
