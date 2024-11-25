@@ -1,11 +1,12 @@
-import { solveCreditCardNumber, solveMoveZerosToEnd, solveTwoSumTwo, target } from '@/static/solver'
+import { solveCreditCardNumber, solveMoveZerosToEnd, solveTwoSumTwo } from '@/static/solver'
 import { defineStore } from 'pinia'
 
 export type Question = {
   id: string
   title: string
   instructions: string
-  input: number[] | null
+  input: number[]
+  additionalInput?: number
   solution: number[] | null
 }
 
@@ -22,6 +23,7 @@ export const useQuestiontStore = defineStore('QuestionStore', {
         title: 'Two sum Two',
         instructions: `Look for the two numbers that sum up to the target ${target}`,
         input: [2, 11, 7, 15],
+        additionalInput: 18,
         solution: null,
       },
       {
@@ -49,7 +51,7 @@ export const useQuestiontStore = defineStore('QuestionStore', {
     solve(index: string): void {
       switch (index) {
         case '0':
-          this.list[index].solution = solveTwoSumTwo(this.list[index].input)
+          this.list[index].solution = solveTwoSumTwo(this.list[index].input, this.additionalInput)
           break
         case '1':
           this.list[index].solution = solveCreditCardNumber(this.list[index].input)
