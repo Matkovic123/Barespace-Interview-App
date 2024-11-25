@@ -19,6 +19,7 @@ const solve = () => questionStore.solve(questionIndex.value)
         <p class="is-size-4">{{ question.instructions }}</p>
         <br />
         <p v-if="question.input" class="is-size-5">Input: {{ question.input }}</p>
+        <p v-if="question.target" class="is-size-5">Target: {{ question.target }}</p>
       </div>
       <div class="column">
         <h1 class="title is-3">Solution</h1>
