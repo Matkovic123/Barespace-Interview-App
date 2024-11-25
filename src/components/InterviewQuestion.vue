@@ -32,11 +32,3 @@ const solve = () => questionStore.solve(questionIndex.value)
 </template>
 
 <style lang="scss" scoped></style>
-
-<!-- {
-  id: '9f995ce4-d2fc-4d00-af1d-6cb1647c6bd3',
-  title: 'Two sum Two',
-  instructions: 'Look for the two numbers that sum up to the target. Target = 18',
-  input: [2, 11, 7, 15],
-  output: null,
-}, -->

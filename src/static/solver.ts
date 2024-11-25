@@ -13,4 +13,13 @@ export const solveCreditCardNumber = (input: number) => {
   const text = String(input)
   return '************' + text.substring(text.length - 4)
 }
-export const solveMoveZerosToEnd = (input: number[]) => String(input)
+export const solveMoveZerosToEnd = (input: number[]) => {
+  const solution = [...input]
+  solution.forEach((value, index) => {
+    if (value === 0) {
+      solution.splice(index, 1)
+      solution.push(0)
+    }
+  })
+  return solution
+}
