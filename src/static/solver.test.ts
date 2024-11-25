@@ -5,6 +5,9 @@ test('solveTwoSumTwo test', () => {
   expect(solveTwoSumTwo([1, 2, 3, 4], 7)).toStrictEqual(
     `Numbers with index 2 and 3 summed up give the desired target value.`,
   )
+  expect(solveTwoSumTwo([2, 11, 7, 15], 18)).toStrictEqual(
+    `Numbers with index 1 and 2 summed up give the desired target value.`,
+  )
 })
 
 test('solveCreditCardNumber test', () => {

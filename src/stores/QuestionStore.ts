@@ -51,7 +51,10 @@ export const useQuestiontStore = defineStore('QuestionStore', {
     solve(index: string): void {
       switch (index) {
         case '0':
-          this.list[index].solution = solveTwoSumTwo(this.list[index].input, this.additionalInput)
+          this.list[index].solution = solveTwoSumTwo(
+            this.list[index].input,
+            this.list[index].target,
+          )
           break
         case '1':
           this.list[index].solution = solveCreditCardNumber(this.list[index].input)
