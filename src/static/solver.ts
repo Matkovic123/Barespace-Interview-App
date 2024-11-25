@@ -13,4 +13,4 @@ export const solveCreditCardNumber = (input: number) => {
   const text = String(input)
   return '************' + text.substring(text.length - 4)
 }
-export const solveMoveZerosToEnd = (input: number[]) => '333'
+export const solveMoveZerosToEnd = (input: number[]) => String(input)
