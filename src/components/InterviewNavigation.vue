@@ -10,11 +10,11 @@ const questions: Question[] = store.list
     <b-navbar centered shadow>
       <template #start>
         <b-navbar-item v-for="(question, index) in questions" :key="question.id">
-          <div class="buttons">
-            <a class="button">
-              <RouterLink :to="`/question/${index}`">Question {{ index + 1 }}</RouterLink>
-            </a>
-          </div>
+          <RouterLink :to="`/question/${index}`">
+            <div class="buttons">
+              <a class="button"> Question {{ index + 1 }} </a>
+            </div>
+          </RouterLink>
         </b-navbar-item>
       </template>
     </b-navbar>
