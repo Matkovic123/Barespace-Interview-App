@@ -1,3 +1,4 @@
+/* groovylint-disable CompileStatic, Indentation */
 pipeline {
   agent any
   tools { nodejs 'Node 22.11.0' }
