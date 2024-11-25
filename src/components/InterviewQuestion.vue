@@ -22,9 +22,9 @@ const solve = () => questionStore.solve(questionIndex.value)
       </div>
       <div class="column">
         <h1 class="title is-3">Solution</h1>
-        <p v-if="question.solution">{{ question.solution }}</p>
+        <p v-if="question.solution" class="is-size-4">{{ question.solution }}</p>
         <p v-else>
-          <b-button @click="solve()" type="is-success">Solve</b-button>
+          <b-button @click="solve" type="is-success">Solve</b-button>
         </p>
       </div>
     </div>

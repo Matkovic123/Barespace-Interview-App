@@ -46,16 +46,16 @@ export const useQuestiontStore = defineStore('QuestionStore', {
   getters: {},
   //Methods
   actions: {
-    solve(index: string) {
+    solve(index: string): void {
       switch (index) {
         case '0':
-          this.list[index].solution = solveTwoSumTwo()
+          this.list[index].solution = solveTwoSumTwo(this.list[index].input)
           break
         case '1':
           this.list[index].solution = solveCreditCardNumber()
           break
         case '2':
-          this.list[index].solution = solveMoveZerosToEnd()
+          this.list[index].solution = solveMoveZerosToEnd(this.list[index].input)
           break
         default:
           console.log('Switch statement fell through')
