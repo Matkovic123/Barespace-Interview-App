@@ -24,6 +24,7 @@ const checkInput = (e: InputEvent) => {
 }
 
 const saveEdit = () => {
+  newQuestion.value.input = inputString.value.split(',').map(Number)
   emits('save-edit', newQuestion.value)
 }
 const cancelEdit = () => {

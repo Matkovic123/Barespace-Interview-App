@@ -17,7 +17,8 @@ router.beforeEach(() => {
 })
 
 const saveEdit = (newQuestion: Question) => {
-  questionStore.saveEdit(newQuestion)
+  questionStore.saveEdit(newQuestion, questionIndex.value)
+  showEdit.value = false
 }
 const cancelEdit = () => {
   showEdit.value = false

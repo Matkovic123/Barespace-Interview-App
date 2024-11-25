@@ -66,8 +66,8 @@ export const useQuestiontStore = defineStore('QuestionStore', {
           console.log('Switch statement fell through')
       }
     },
-    saveEdit(newQuestion: Question) {
-      console.log('saveEdit for q ' + JSON.stringify(newQuestion))
+    saveEdit(newQuestion: Question, questionIndex: number) {
+      this.list[questionIndex] = { ...newQuestion, solution: null }
     },
   },
 })
