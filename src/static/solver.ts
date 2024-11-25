@@ -1,7 +1,7 @@
 export const solveTwoSumTwo = (input: number[], target: number): string => {
   for (let i = 0; i < input.length; i++) {
     const index = input.indexOf(target - input[i])
-    if (index !== -1) {
+    if (index !== -1 && index !== i) {
       return `Numbers with index ${i} and ${index} summed up give the desired target value.`
     }
   }
