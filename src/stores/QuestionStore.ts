@@ -20,7 +20,7 @@ export const useQuestiontStore = defineStore('QuestionStore', {
     list: [
       {
         id: '9f995ce4-d2fc-4d00-af1d-6cb1647c6bd3',
-        title: 'Two sum Two',
+        title: 'Two sum Two and you',
         instructions: `Look for the two numbers that sum up to the target`,
         input: [2, 11, 7, 15],
         target: 18,
